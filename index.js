@@ -1,5 +1,6 @@
-// var errsole = require('errsole')
+// const errsole = require('errsole')
 // errsole.initialize({
+//   framework: 'express',
 //   token: '523caaa8-dcae-412d-a71f-8aa1e04c3e26'
 // })
 
