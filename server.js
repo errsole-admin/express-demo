@@ -1,7 +1,17 @@
-var errsole = require('errsole')
+// var errsole = require('errsole')
+// errsole.initialize({
+//   token: '523caaa8-dcae-412d-a71f-8aa1e04c3e26'
+// })
+
+/**
+ * Put this Errsole code snippet at the top of your app's main file
+ */
+const errsole = require('@errsole/errsole-private')
 errsole.initialize({
-  token: '523caaa8-dcae-412d-a71f-8aa1e04c3e26'
+  framework: 'express',
+  token: 'e6d46222-390e-48c3-810c-3b701dc72203'
 })
+// End of Errsole code snippet
 
 var express = require('express')
 var fs = require('fs')
