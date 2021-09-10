@@ -1,13 +1,3 @@
-/**
- * Put this Errsole code snippet at the top of your app's main file
- */
-const errsole = require('errsole')
-errsole.initialize({
-  framework: 'express',
-  token: 'a359f1c8-c792-41de-9578-34f26a2a2d45'
-})
-// End of Errsole code snippet
-
 var express = require('express')
 var fs = require('fs')
 var multer = require('multer')
@@ -57,4 +47,4 @@ app.get('/download-file', function (req, res) {
   res.download(file)
 })
 
-app.listen(errsole.wrapPort(3000))
+app.listen(8080)
