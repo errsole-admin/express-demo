@@ -38,7 +38,7 @@ app.get('/get-json', function (req, res) {
 })
 
 app.post('/post-request', function (req, res) {
-  var sum = req.body[0] + req.body[1]
+  var sum = req.body[0] * req.body[1]
   res.send(sum.toString())
 })
 
