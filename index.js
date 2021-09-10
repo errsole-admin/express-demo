@@ -13,7 +13,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/get-request', function (req, res) {
-  // Remove the below line
+  // Remove 'World' from the below line
   res.locals.name = req.query.name || 'World'
   res.render('index')
 })

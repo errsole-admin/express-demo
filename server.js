@@ -22,6 +22,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/get-request', function (req, res) {
+  res.locals.name = req.query.name
   res.render('index')
 })
 
