@@ -33,7 +33,7 @@ app.get('/get-json', function (req, res) {
 app.post('/post-request', function (req, res) {
   // Remove this line: app.use(express.json())
   var sum = req.body.input[0] * req.body.input[1]
-  res.status(200).send(sum)
+  res.send(sum.toString())
 })
 
 app.post('/upload-file', upload.single('photo'), function (req, res) {
