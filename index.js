@@ -3,14 +3,14 @@ var fs = require('fs')
 var multer = require('multer')
 var path = require('path')
 
-var upload = multer({ dest: 'files/' })
-
 var app = express()
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
+
+var upload = multer({ dest: 'files/' })
 
 app.get('/get-request', function (req, res) {
   // Remove 'World' from the below line
