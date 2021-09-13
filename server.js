@@ -42,8 +42,8 @@ app.post('/post-request', function (req, res) {
   res.send(sum.toString())
 })
 
-app.post('/upload-file', upload.single('picture'), function (req, res) {
-  res.sen(req.file.filename)
+app.post('/upload-file', upload.single('photo'), function (req, res) {
+  res.send(req.file.filename)
 })
 
 app.get('/download-file', function (req, res) {
