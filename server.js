@@ -4,7 +4,7 @@
 const errsole = require('errsole')
 errsole.initialize({
   framework: 'express',
-  token: '5fe87b5e-a5bc-4978-8a54-a3d583b40243'
+  token: '79c06b43-cde8-4009-a076-4a4f50fc2af9'
 })
 // End of Errsole code snippet
 
@@ -51,7 +51,7 @@ app.get('/download-file', function (req, res) {
   res.download(file)
 })
 
-app.get('*', function (req, res) {
+app.all('*', function (req, res) {
   res.send({})
 })
 
