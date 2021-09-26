@@ -46,4 +46,8 @@ app.get('/download-file', function (req, res) {
   res.download(file)
 })
 
+app.get('*', function (req, res) {
+  res.send({})
+})
+
 app.listen(8080)
