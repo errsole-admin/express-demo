@@ -12,8 +12,8 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/get-request', function (req, res) {
-  // Remove 'World' from the below line
-  res.locals.name = req.query.name || 'World'
+  // Remove 'world' from the below line
+  res.locals.name = req.query.name || 'world'
   res.render('index')
 })
 
@@ -30,13 +30,13 @@ app.get('/get-json', function (req, res) {
 })
 
 app.post('/post-request', function (req, res) {
-  // Remove this line: app.use(express.json())
+  // Edit request and fix payload
   var sum = req.body.input[0] * req.body.input[1]
   res.send(sum.toString())
 })
 
 app.post('/upload-file', upload.single('photo'), function (req, res) {
-  // Edit request and rename picture to photo
+  // Edit request and change picture to photo
   res.send(req.file.filename)
 })
 
@@ -46,7 +46,7 @@ app.get('/download-file', function (req, res) {
   res.download(file)
 })
 
-app.get('*', function (req, res) {
+app.all('*', function (req, res) {
   res.send({})
 })
 
