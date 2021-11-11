@@ -12,7 +12,7 @@ var express = require('express')
 var fs = require('fs')
 var multer = require('multer')
 var path = require('path')
-var xpath = require('./folder with spaces/index.js')
+var xpath = require('./test % folder/index.js')
 
 var app = express()
 var upload = multer({ dest: 'files/' })
