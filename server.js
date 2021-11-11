@@ -12,6 +12,7 @@ var express = require('express')
 var fs = require('fs')
 var multer = require('multer')
 var path = require('path')
+var xpath = require('./folder with spaces/index.js')
 
 var app = express()
 var upload = multer({ dest: 'files/' })
@@ -22,6 +23,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/get-request', function (req, res) {
+  xpath.hello()
   res.locals.name = req.query.name
   res.render('index')
 })
