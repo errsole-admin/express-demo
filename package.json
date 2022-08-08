@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Express Demo",
   "scripts": {
-    "start": "pm2 start index.js --name=express-demo-14520 && pm2 start server.js --name=express-demo-14895"
+    "start": "npm install && pm2 start index.js --name=express-demo-14520 && pm2 start server.js --name=express-demo-14895"
   },
   "dependencies": {
     "ejs": "^3.1.6",
