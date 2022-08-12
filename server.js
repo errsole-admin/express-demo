@@ -4,9 +4,7 @@
 const errsole = require('errsole')
 errsole.initialize({
   framework: 'express',
-  token: 'b283d554-03bd-4d4d-8c1f-fae3b32f99db',
-  editCode: true, // Set false in staging and production environments
-  evalExpression: true // Set false in staging and production environments
+  token: 'b0935465-cd2a-414c-9bad-3e0703fd2698'
 })
 // End of Errsole code snippet
 
