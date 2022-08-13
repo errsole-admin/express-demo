@@ -4,10 +4,10 @@
   "description": "Express Demo",
   "scripts": {
     "prestart": "npm install",
-    "start": "pm2 start index.js --name=express-demo-14482 && pm2 start server.js --name=express-demo-14874",
+    "start": "pm2 start server.js --name=express-demo-14874",
     "poststart": "cp nginx.conf /etc/nginx/conf.d/demo14874.errsole.com.conf && sudo service nginx reload",
     "prestop": "rm -f /etc/nginx/conf.d/demo14874.errsole.com.conf && sudo service nginx reload",
-    "stop": "pm2 delete express-demo-14482 && pm2 delete express-demo-14874"
+    "stop": "pm2 delete express-demo-14874"
   },
   "dependencies": {
     "ejs": "^3.1.6",
