@@ -1,10 +1,10 @@
-var express = require('express');
-var fs = require('fs');
-var multer = require('multer');
-var path = require('path');
+const express = require('express');
+const fs = require('fs');
+const multer = require('multer');
+const path = require('path');
 
-var app = express();
-var upload = multer({ dest: 'files/' });
+const app = express();
+const upload = multer({ dest: 'files/' });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -19,7 +19,7 @@ app.get('/get-request', function (req, res) {
 
 app.get('/get-json', function (req, res) {
   // Change "files/sample.json" to "files/sample.zip" in the below line
-  var file = path.join(__dirname, 'files/sample.json');
+  const file = path.join(__dirname, 'files/sample.json');
   fs.readFile(file, 'utf8', function (err, data) {
     if (err) {
       res.status(500).send(err.message || err.toString());
@@ -31,7 +31,7 @@ app.get('/get-json', function (req, res) {
 
 app.post('/post-request', function (req, res) {
   // Make the request body an array of two numbers
-  var sum = req.body.input[0] * req.body.input[1];
+  const sum = req.body.input[0] * req.body.input[1];
   res.send(sum.toString());
 });
 
@@ -42,7 +42,7 @@ app.post('/upload-file', upload.single('photo'), function (req, res) {
 
 app.get('/download-file', function (req, res) {
   // Change "files/sample.zip" to "sample.zip" in the below line
-  var file = path.join(__dirname, 'files/sample.zip');
+  const file = path.join(__dirname, 'files/sample.zip');
   res.download(file);
 });
 

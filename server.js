@@ -8,13 +8,13 @@ errsole.initialize({
 });
 // End of Errsole code snippet
 
-var express = require('express');
-var fs = require('fs');
-var multer = require('multer');
-var path = require('path');
+const express = require('express');
+const fs = require('fs');
+const multer = require('multer');
+const path = require('path');
 
-var app = express();
-var upload = multer({ dest: 'files/' });
+const app = express();
+const upload = multer({ dest: 'files/' });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -27,7 +27,7 @@ app.get('/get-request', function (req, res) {
 });
 
 app.get('/get-json', function (req, res) {
-  var file = path.join(__dirname, 'files/sample.zip');
+  const file = path.join(__dirname, 'files/sample.zip');
   fs.readFile(file, 'utf8', function (err, data) {
     if (err) {
       res.status(500).send(err.message || err.toString());
@@ -38,7 +38,7 @@ app.get('/get-json', function (req, res) {
 });
 
 app.post('/post-request', function (req, res) {
-  var result = req.body.input[0] * req.body.input[1];
+  const result = req.body.input[0] * req.body.input[1];
   res.send(result.toString());
 });
 
@@ -47,7 +47,7 @@ app.post('/upload-file', upload.single('photo'), function (req, res) {
 });
 
 app.get('/download-file', function (req, res) {
-  var file = path.join(__dirname, 'sample.zip');
+  const file = path.join(__dirname, 'sample.zip');
   res.download(file);
 });
 
