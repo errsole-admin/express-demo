@@ -6,8 +6,8 @@ const path = require('path');
 const app = express();
 const upload = multer({ dest: 'files/' });
 
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 

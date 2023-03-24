@@ -1,25 +1,11 @@
-/**
- * Put this Errsole code snippet at the top of your app's main file
- */
-const errsole = require('errsole');
-errsole.initialize({
-  framework: 'express',
-  token: '9d596fe4-6ea0-48da-908b-caf47f70aa6c',
-  editCode: true,
-  evalExpression: true
-});
-// End of Errsole code snippet
-
 const express = require('express');
 const fs = require('fs');
-const multer = require('multer');
 const path = require('path');
 
 const app = express();
-const upload = multer({ dest: 'files/' });
 
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -40,12 +26,8 @@ app.get('/get-json', function (req, res) {
 });
 
 app.post('/post-request', function (req, res) {
-  const result = req.body.input[0] * req.body.input[1];
-  res.send(result.toString());
-});
-
-app.post('/upload-file', upload.single('photo'), function (req, res) {
-  res.send(req.file.filename);
+  const sum = req.body.input[0] * req.body.input[1];
+  res.send(sum.toString());
 });
 
 app.get('/download-file', function (req, res) {
