@@ -1,3 +1,15 @@
+/**
+ * Put this Errsole code snippet at the top of your app's main file
+ */
+const errsole = require('errsole');
+errsole.initialize({
+  framework: 'express',
+  token: process.env.ERRSOLE_TOKEN,
+  editCode: true,
+  evalExpression: true
+});
+// End of Errsole code snippet
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
