@@ -1,11 +1,11 @@
 /**
- * Put this Errsole code snippet at the top of your app's main file
+ * Insert this Errsole code snippet as the first line of your app's main file
  */
-const errsole = require('errsole');
+const errsole = require('@errsole/node');
 errsole.initialize({
   framework: 'express',
   token: process.env.ERRSOLE_TOKEN,
-  editCode: true,
+  exitOnException: true,
   evalExpression: true
 });
 // End of Errsole code snippet
