@@ -1,14 +1,12 @@
-/**
- * Insert this Errsole code snippet as the first line of your app's main file
- */
-const errsole = require('@errsole/node');
+const errsole = require('errsole');
+const ErrsoleSequelize = require('errsole-sequelize');
+
 errsole.initialize({
-  framework: 'express',
-  token: process.env.ERRSOLE_TOKEN,
-  exitOnException: true,
-  evalExpression: true
+  storage: new ErrsoleSequelize({
+    dialect: 'sqlite',
+    storage: '/tmp/logs.sqlite'
+  })
 });
-// End of Errsole code snippet
 
 const express = require('express');
 const fs = require('fs');
