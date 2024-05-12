@@ -1,5 +1,8 @@
 const errsole = require('errsole');
 const ErrsoleSequelize = require('errsole-sequelize');
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
 errsole.initialize({
   storage: new ErrsoleSequelize({
@@ -8,11 +11,9 @@ errsole.initialize({
   })
 });
 
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-
 const app = express();
+
+app.use('/errsole', errsole.expressProxyMiddleware());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
