@@ -1,19 +1,20 @@
-const errsole = require('errsole');
-const ErrsoleSequelize = require('errsole-sequelize');
+/**
+ * Insert this Errsole code snippet as the first line of your app's main file
+ */
+const errsole = require('@errsole/node');
+errsole.initialize({
+  framework: 'express',
+  token: process.env.ERRSOLE_TOKEN,
+  exitOnException: true,
+  evalExpression: true
+});
+// End of Errsole code snippet
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
-errsole.initialize({
-  storage: new ErrsoleSequelize({
-    dialect: 'sqlite',
-    storage: '/tmp/logs.sqlite'
-  })
-});
-
 const app = express();
-
-app.use('/errsole', errsole.expressProxyMiddleware());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -48,6 +49,57 @@ app.get('/download-file', function (req, res) {
   console.log('GET', '/download-file');
   const file = path.join(__dirname, 'sample.zip');
   res.download(file);
+});
+
+app.get('/api/users/123/profile', function (req, res) {
+  setTimeout(function () {
+    res.send({});
+  }, 2722);
+});
+app.get('/api/products/456/details', function (req, res) {
+  setTimeout(function () {
+    res.send({});
+  }, 3199);
+});
+app.get('/api/orders/789/status', function (req, res) {
+  setTimeout(function () {
+    res.send({});
+  }, 2407);
+});
+app.get('/api/carts/1234/items', function (req, res) {
+  setTimeout(function () {
+    res.send({});
+  }, 3319);
+});
+app.get('/api/notifications/user/321', function (req, res) {
+  setTimeout(function () {
+    res.send({});
+  }, 1093);
+});
+app.post('/api/auth/login', function (req, res) {
+  setTimeout(function () {
+    res.status(201).send({});
+  }, 1334);
+});
+app.post('/api/auth/register', function (req, res) {
+  setTimeout(function () {
+    res.status(201).send({});
+  }, 2493);
+});
+app.post('/api/payments/checkout', function (req, res) {
+  setTimeout(function () {
+    res.status(201).send({});
+  }, 1467);
+});
+app.post('/api/reviews/987/product/654', function (req, res) {
+  setTimeout(function () {
+    res.status(201).send({});
+  }, 1908);
+});
+app.put('/api/shipping/address/5678', function (req, res) {
+  setTimeout(function () {
+    res.send({});
+  }, 3968);
 });
 
 app.all('*', function (req, res) {
