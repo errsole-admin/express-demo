@@ -41,8 +41,13 @@ app.get('/get-json', function (req, res) {
 
 app.post('/post-request', function (req, res) {
   console.log('POST', '/post-request');
-  const sum = req.body.input[0] * req.body.input[1];
-  res.send(sum.toString());
+  try {
+    const sum = req.body.input[0] * req.body.input[1];
+    res.send(sum.toString());
+  } catch (err) {
+    errsole.meta({ req }).error(err);
+    res.status(500).send(err.toString());
+  }
 });
 
 app.get('/download-file', function (req, res) {
