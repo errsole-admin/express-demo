@@ -45,7 +45,7 @@ app.post('/post-request', function (req, res) {
     const sum = req.body.input[0] * req.body.input[1];
     res.send(sum.toString());
   } catch (err) {
-    errsole.meta({ req }).error(err);
+    errsole.meta({ 'req.headers': req.headers, 'req.body': req.body }).error(err);
     res.status(500).send(err.toString());
   }
 });
